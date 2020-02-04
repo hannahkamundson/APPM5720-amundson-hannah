@@ -12,20 +12,20 @@ double get_guess(int j, int N);
 double get_weight(double x, int N);
 
 int main() {
-    int N = 20;
+    int N = 25;
     int NP = N + 1;
     vector<double> x(NP);
     vector<double> w(NP);
     double sum = 0;
 
-    for (int i = 0; i < 20; i++) {
+    for (int i = 0; i <= N; i++) {
         double guess = get_guess(i, N);
         double gauss_node = get_gauss_node(guess, N);
 
         x[i] = gauss_node;
         w[i] = get_weight(gauss_node, N);
 
-        cout << "For " << i << " the gauss node is " << gauss_node << " and the weight is " << w[i] << ".\n";
+        //cout << "For " << i << " the gauss node is " << gauss_node << " and the weight is " << w[i] << ".\n";
         sum += w[i];
     }
 
